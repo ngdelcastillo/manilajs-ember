@@ -1,0 +1,3 @@
+button.btn.btn-default data-target="#login-modal" data-toggle="modal" type="button"
+  | Login
+= partial 'partials/login'

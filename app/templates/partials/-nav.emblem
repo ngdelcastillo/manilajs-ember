@@ -12,15 +12,13 @@ nav.navbar.navbar-default
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        li
-          if session.isAuthenticated
-            button.btn.btn-primary click='invalidatedSession'
+        if session.isAuthenticated
+          li
+            button.btn.btn-primary click='logout'
               | Logout
-          else
-            .btn-group role="group"
-              button.btn.btn-primary data-target="#login-modal" data-toggle="modal" type="button"
-                | Login
-              button.btn.btn-primary data-target="#register-modal" data-toggle="modal" type="button"
-                | Register
-            = partial 'partials/login'
+        else
+          = auth/-login login='login'
+          li
+            button.btn.btn-default data-target="#register-modal" data-toggle="modal" type="button"
+              | Register
             = partial 'partials/register'

@@ -1,0 +1,26 @@
+#register-modal.modal.fade aria-labelledby="mySmallModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close aria-label="Close" data-dismiss="modal" type="button"
+          span aria-hidden="true" &times;
+        h4.modal-title Register
+      .modal-body
+        form.form-horizontal submit="register"
+          .form-group
+            label.col-sm-2.control-label for="inputEmail3" Email
+            .col-sm-10
+              = input value=email class="form-control" type="email" placeholder="Email"
+          .form-group
+            label.col-sm-2.control-label for="inputPassword3" Password
+            .col-sm-10
+              = input value=password class="form-control" type="password" placeholder="Password"
+          .form-group
+            label.col-sm-2.control-label for="inputPassword3" Confirm Password
+            .col-sm-10
+              = input value=passwordConfirmation class="form-control" type="password" placeholder="Password"
+          .form-group
+            .col-sm-offset-2.col-sm-10
+      .modal-footer
+        button.btn.btn-default data-dismiss="modal" type="button" Close
+        button.btn.btn-default type="submit" Register

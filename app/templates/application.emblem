@@ -1,47 +1,4 @@
-nav.navbar.navbar-default
-  .container-fluid
-    / Brand and toggle get grouped for better mobile display
-    .navbar-header
-      button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand href="/"
-        | ManilaJS
-    / Collect the nav links, forms, and other content for toggling
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-right
-        li
-          if session.isAuthenticated
-            button.btn.btn-primary click='invalidatedSession'
-              | Logout
-          else
-            / Small modal
-            button.btn.btn-primary data-target="#login-modal" data-toggle="modal" type="button"
-              | Login
-            #login-modal.modal.fade aria-labelledby="mySmallModalLabel" role="dialog" tabindex="-1"
-              .modal-dialog
-                .modal-content
-                  .modal-header
-                    button.close aria-label="Close" data-dismiss="modal" type="button"
-                      span aria-hidden="true" &times;
-                    h4.modal-title Login
-                  .modal-body
-                    form.form-horizontal
-                      .form-group
-                        label.col-sm-2.control-label for="inputEmail3" Email
-                        .col-sm-10
-                          = input value="email" class="form-control" type="email" placeholder="Email"
-                      .form-group
-                        label.col-sm-2.control-label for="inputPassword3" Password
-                        .col-sm-10
-                          input#inputPassword3.form-control placeholder="Password" type="password"
-                      .form-group
-                        .col-sm-offset-2.col-sm-10
-                  .modal-footer
-                    button.btn.btn-default data-dismiss="modal" type="button" Close
-                    button.btn.btn-default type="submit" Sign in
+= partial 'partials/nav'
 .container-fluid
   .row
     = outlet

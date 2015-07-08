@@ -7,5 +7,5 @@ each message in messages key="@guid"
           |  #{moment message.timestamp 'LLL'}
   .chatarea-text
     if message.body
-      = message.body
-      /* = marked-down message.body */
+      /* = message.body */
+      = marked-down message.body

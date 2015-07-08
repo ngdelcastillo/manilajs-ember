@@ -4,8 +4,7 @@ each message in messages key="@guid"
       p.chatarea-user
         = message.sender
         span.message-created-on
-          = message.timestamp
-        /* = formatted-date message.timestamp */
+          |  #{moment message.timestamp 'LLL'}
   .chatarea-text
     if message.body
       = message.body

@@ -4,7 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'manilajs',
     environment: environment,
-    firebase: 'https://YOUR-FIREBASE-NAME.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -36,6 +35,7 @@ module.exports = function(environment) {
       serverTokenEndpoint: ENV.host + '/users/sign_in'
     };
     ENV.contentSecurityPolicy['connect-src'] =  "'self' wss://*.firebaseio.com "  + ENV.host;
+    ENV.firebase = 'https://manilajsprep.firebaseio.com/';
   }
 
 
@@ -51,8 +51,17 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-
+  if (environment === 'staging') {
+    ENV.host = 'http://manilajs.herokuapp.com';
+    ENV['simple-auth'] = {
+      authorizer: 'simple-auth-authorizer:devise',
+      crossOriginWhitelist: [ENV.host]
+    };
+    ENV['simple-auth-devise'] = {
+      serverTokenEndpoint: ENV.host + '/users/sign_in'
+    };
+    ENV.contentSecurityPolicy['connect-src'] =  "'self' wss://*.firebaseio.com "  + ENV.host;
+    ENV.firebase = 'https://manilajs-staging.firebaseio.com/';
   }
 
   return ENV;

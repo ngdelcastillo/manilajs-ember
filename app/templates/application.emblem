@@ -1,4 +1,4 @@
 = partial 'partials/nav'
 .container-fluid
-  .row
+  .row-fluid
     = outlet

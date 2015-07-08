@@ -1,0 +1,21 @@
+.col-md-12
+  .panel.panel-default
+    .panel-heading
+      h3 Channels
+      button.btn.btn-success Create Channel
+    .panel-body
+      .row-fluid
+        .col-md-4
+          ul.list-group
+            a.list-group-item href="#"
+              span.badge 1
+              | Test
+            a.list-group-item href="#"
+              span.badge 1
+              | Test
+            a.list-group-item href="#"
+              span.badge 1
+              | Test
+        .col-md-8
+          = outlet
+

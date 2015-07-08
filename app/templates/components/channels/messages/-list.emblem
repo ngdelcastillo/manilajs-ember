@@ -1,0 +1,12 @@
+each message in messages key="@guid"
+  .chatarea-user-details
+    .chatarea-user-misc
+      p.chatarea-user
+        = message.sender
+        span.message-created-on
+          = message.timestamp
+        /* = formatted-date message.timestamp */
+  .chatarea-text
+    if message.body
+      = message.body
+      /* = marked-down message.body */

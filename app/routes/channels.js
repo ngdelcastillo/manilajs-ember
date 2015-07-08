@@ -13,5 +13,16 @@ export default Ember.Route.extend({
         channels: channels
       });
     });
+  },
+  setupController(controller, model){
+    controller.set('hasChannels', true);
+    controller.set('channels', model.channels);
+  },
+  actions: {
+    createChannel(params){
+      let channel = this.store.createRecord('channel', params);
+      channel.save();
+      return false;
+    }
   }
 });

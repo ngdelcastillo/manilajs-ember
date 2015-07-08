@@ -17,6 +17,12 @@ module.exports = function(environment) {
       // when it is created
     },
     contentSecurityPolicy: {
+      'default-src': "https://*.firebaseio.com",
+      'script-src': "'self' 'unsafe-inline' http://use.typekit.net/ localhost:35729 https://*.firebaseio.com",
+      'font-src': "'self' https://*.typekit.com/*",
+      'img-src': "'self' 'unsafe-inline' http://p.typekit.net http://www.placehold.it/ http://placehold.it/ https://placeholdit.imgix.net/",
+      'style-src': "'self' 'unsafe-inline' http://use.typekit.net",
+      'media-src': "'self'"
     }
   };
 

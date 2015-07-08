@@ -1,0 +1,21 @@
+.panel.panel-default
+  .panel.heading
+    h3
+      = channel.name
+  .panel.body
+    each message in messages
+      .chatarea-user-details
+        .chatarea-user-misc
+          p.chatarea-user
+            = message.sender
+          span.message-created-on
+            /* = formatted-date message.timestamp */
+            = message.timestamp
+      .chatarea-text
+        if message.body
+          = message.body
+          /* = marked-down message.body */
+  .panel.footer
+    = channels/messages/-create createMessage="createMessage"
+
+

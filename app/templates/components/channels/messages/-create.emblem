@@ -1,0 +1,5 @@
+form.form-horizontal submit="createMessage"
+  .input-group
+    = input value=body class="form-control" type="textarea"
+    span.input-group-btn
+      button.btn.btn-success type="submit" Send

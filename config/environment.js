@@ -58,7 +58,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'staging') {
-    ENV.host = 'http://manilajs.herokuapp.com';
+    ENV.host = 'http://manilajs-api.herokuapp.com/';
     ENV['simple-auth'] = {
       authorizer: 'simple-auth-authorizer:devise',
       crossOriginWhitelist: [ENV.host]
@@ -67,7 +67,7 @@ module.exports = function(environment) {
       serverTokenEndpoint: ENV.host + '/users/sign_in'
     };
     ENV.contentSecurityPolicy['connect-src'] =  "'self' wss://*.firebaseio.com "  + ENV.host;
-    ENV.firebase = 'https://manilajs-staging.firebaseio.com/';
+    ENV.firebase = 'https://manilajsprep-staging.firebaseio.com/';
   }
 
   return ENV;
